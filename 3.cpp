@@ -1,28 +1,28 @@
 #include "stdafx.h"
 #include "stdio.h"
+#include <Windows.h>
+#include <time.h>
 int main()
 {
-	float val, val1;
-	char base;
-	printf("Input value in degrees/radians(45.00D/45.00R): ");
-	scanf_s("%f%c", &val, &base);
-	while (base != 'D' && base != 'R') {
+	int height, width;
+constant: int maxheigth = 100;
+	printf("Input height of triangle: ");
+	scanf_s("%d", &height);
+	while (height < 0 || height > maxheigth)
+	{
 		rewind(stdin);
-		printf("Wrong format, input value in degrees/radians(45.00D/45.00R) again: ");
-		scanf_s("%f%c", &val, &base);
+		printf("Your heigth is out of range, enter it again: ");
+		scanf_s("%d", &height);
 	}
-	while (val < 0) {
-		rewind(stdin);
-		printf("Wrong format, input value in degrees/radians(45.00D/45.00R) again: ");
-		scanf_s("%f%c", &val, &base);
-	}
-	if (base == 'D') {
-		val1 = (val * 3.14) / 180;
-		printf("%5.2f%c  = %5.2fR", val, base, val1);
-	}
-	else {
-		val1 = (val * 180) / 3.14;
-		printf("%5.2f%c  = %5.2fR", val, base, val1);
+	width = height * 2 - 1;
+	for (int line = 1; line <= height; line++) {
+		for (int space = 0; space <= height - line; space++) {
+			printf(" ");
+		}
+		for (int j = 1; j <= 2 * line - 1; j++) {
+			printf("*");
+		}
+		printf("\n");	
 	}
 	getchar();
 	getchar();

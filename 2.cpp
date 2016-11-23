@@ -1,38 +1,40 @@
 #include "stdafx.h"
 #include "stdio.h"
+#include <Windows.h>
+#include <time.h> 
 int main()
-{ 
-	char a, b;
-	int h, m, s;
-	printf("Input time(hh:mm:ss): ");
-	scanf_s("%d%*c%d%*c%d", &h, &m, &s);
-	while (s < 0 || s > 60) {	
+{
+	int randomnumber, usernumber, usernumber1 = 100, usernumber2 = 1, i = 0;
+	srand(time(NULL));
+	randomnumber = rand() % 100 + 1;
+	printf("Guess number (0 - 100): ");
+	scanf_s("%d", &usernumber);
+	if (usernumber < 1 || usernumber > 100){
 		rewind(stdin);
-		printf("Time(hh:mm:ss) again: ");
-		scanf_s("%d%*c%d%*c%d", &h, &m, &s);
+		printf("Your number is out of range, enter it again: ");
+		scanf_s("%d", &usernumber);
 	}
-	while (m < 0 || m > 60) {
-		rewind(stdin);
-		printf("Time(hh:mm:ss) again: ");
-		scanf_s("%d%*c%d%*c%d", &h, &m, &s);
-	}
-	while (h < 0 || h > 24) {
-		rewind(stdin);
-		printf("Time(hh:mm:ss) again: ");
-		scanf_s("%d%*c%d%*c%d", &h, &m, &s);
-	}
-	if (h >= 4 && h < 12) {
-		printf("Good");
-	}
-	else {
-		if (h >= 12 && h < 18) {
-			printf("Good Afternoon");
+	while (usernumber != randomnumber) {
+		if (usernumber < 1 || usernumber > 100) {
+			rewind(stdin);
+			printf("Your number is out of range, enter it again: ");
+			scanf_s("%d", &usernumber);
 		}
+		if (usernumber > randomnumber) {
+			usernumber1 = usernumber;
+			rewind(stdin);
+			printf("Less (%d - %d): ", usernumber2, usernumber1);
+			scanf_s("%d", &usernumber);
+		} 
 		else {
-				printf("Good Evening");
+			usernumber2 = usernumber;
+			rewind(stdin);
+			printf("More (%d - %d): ", usernumber2, usernumber1);
+			scanf_s("%d", &usernumber);
 		}
+		i++;
 	}
-	getchar();
+	printf("You're winner!!! Number: %d Count of attempts: %d", randomnumber, i);	
 	getchar();
 	getchar();
 	return 0;
