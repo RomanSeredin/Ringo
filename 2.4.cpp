@@ -1,5 +1,4 @@
-#include "stdafx.h"
-#include "stdio.h"
+#include <stdio.h>
 #include <Windows.h>
 #include <time.h>
 #define n 9

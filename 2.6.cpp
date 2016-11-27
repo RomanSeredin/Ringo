@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <stdio.h>
 #include <locale.h>
 #include <string.h>
@@ -23,14 +22,14 @@ int main() {
 		for (a; a > 0; a--) {
 			if (str[a - 1] == ' ') {
 				str[a - 1] = '\0';
-			}				
+			                       }				
 			else break;
-		} 		
+		                    } 		
 		j++;
-	}
+	                                   }
 	printf("Result:%s", str);
 	getchar();
 	getchar();
 	getchar();
 	return 0;
-}
+           }

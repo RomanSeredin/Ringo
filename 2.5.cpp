@@ -1,5 +1,4 @@
-#include "stdafx.h"
-#include "stdio.h"
+#include <stdio.h>
 #include <Windows.h>
 #include <time.h>
 #define n 9
@@ -28,7 +27,9 @@ int main()
 			str[n - 1] = '\0';	
 		}
 		printf("%d. %s\n", j, str);
-	}
+	                            }
 	getchar();
 	return 0;
 }
+
+

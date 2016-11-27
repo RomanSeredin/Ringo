@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "stdio.h"
+
+#include <stdio.h>
 
 int main()
 {
@@ -41,7 +41,7 @@ int main()
 
 
 	if (sex == 'm')
-	{
+	{   
 		if (imt < 20)
 		{
 			printf("You need to gain weight");
@@ -58,30 +58,6 @@ int main()
 		{
 			printf("You need to lose much more weight");
 		}
-
-	}
-	else
-	{
-		if (imt < 19)
-		{
-			printf("You need to gain weight");
-		}
-		else if (imt < 24)
-		{
-			printf("Your weight is OK!");
-		}
-		else if (imt < 30)
-		{
-			printf("You need to lose some weight");
-		}
-		else
-		{
-			printf("You need to lose much more weight");
-		}
-
-	}
-
-	getchar();
-	getchar();
-	return 0;
+		return 0;
+    }   
 }
