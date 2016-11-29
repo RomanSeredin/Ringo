@@ -1,17 +1,21 @@
 #include <stdio.h>
 
 int main() {
-	int feet, inches;
-	double santm;
-	printf("Input height (feet, inches): ");
-	scanf_s("%d%*c%d", &feet, &inches);
-	while (feet > 8 || inches > 11) {
-		rewind(stdin);
-		printf("WRONG!, input height (feet, inches) again: ");
-		scanf_s("%d%*c%d", &feet, &inches);
-	                                }
-	santm = (feet * 12 + inches) * 2.54;
-	printf("%d'%d'' = %4.1fsm", feet, inches, santm);
+    int feet = 0;
+    int inches = 0;
+    double sm;
+
+    printf("Input height (feet inches): ");
+    scanf("%d%*c%d", &feet, &inches);
+
+    sm = (12 * feet + inches) * 2.54;
+
+    printf("Height in sm: %10.1f", sm);
 	getchar();
-	return 0;
+	getchar();
+	getchar();
+	getchar();
+	getchar();
+    return 0;
+}
             }
